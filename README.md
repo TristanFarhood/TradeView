@@ -39,41 +39,6 @@ src/
 
 ---
 
-## ⚙️ Getting Started
-
-### 1. Clone the repository
-
-```
-git clone https://github.com/YOUR_USERNAME/tradeview.git
-cd tradeview
-```
-
-### 2. Install dependencies
-
-```
-npm install
-```
-
-### 3. Run the development server
-
-```
-npm run dev
-```
-
----
-
-## 🔐 Environment Variables
-
-Create a `.env` file in the root directory:
-
-```
-VITE_FINNHUB_API_KEY=your_api_key_here
-```
-
-> ⚠️ Do not commit your `.env` file.
-
----
-
 ## 🧠 Current Focus
 
 - Building the core dashboard layout  
@@ -110,7 +75,3 @@ VITE_FINNHUB_API_KEY=your_api_key_here
 Computer Science @ Western University  
 
 ---
-
-## ⭐️ Notes
-
-This project is part of my ongoing effort to build full-stack, real-world applications and strengthen my frontend development skills.
