@@ -1,77 +1,64 @@
-# 📈 TradeView
+# TradeView
 
-**TradeView** is a modern stock dashboard web application built with **React** and **Tailwind CSS**, designed to visualize market data and provide an interactive interface for tracking stocks.
+TradeView is a stock dashboard built with React, Vite, and Tailwind CSS. The current version ships as a polished mock trading interface with reusable components, responsive layouts, and structured market data that can later be replaced with a live API.
 
-> 🚧 This project is currently in development.
+## Features
 
----
+- Responsive multi-panel dashboard for desktop and mobile
+- Interactive stock switching for `AAPL`, `MSFT`, `NVDA`, and `AMZN`
+- SVG-based chart with `1D`, `1W`, `1M`, `3M`, and `1Y` range views
+- Company snapshot, session metrics, watchlist, top movers, and portfolio allocation panels
+- Reusable card-based UI structure for extending the dashboard
+- Mock data layer designed to be swapped for Finnhub or another market data provider
 
-## 🚀 Features (In Progress)
+## Tech Stack
 
-- 📊 Responsive dashboard layout using CSS Grid  
-- 🧩 Reusable UI components (e.g., Card system)  
-- 🎨 Clean and modern interface with Tailwind CSS  
-- 🔍 Planned: Stock search functionality  
-- 📈 Planned: Interactive charts with real-time data  
-- 🌐 Planned: Integration with Finnhub API  
+- Frontend: React with Vite
+- Styling: Tailwind CSS v4 with custom CSS
+- Data: Local mock market data
+- Planned API: Finnhub
 
----
+## Project Structure
 
-## 🛠️ Tech Stack
-
-- **Frontend:** React (Vite)  
-- **Styling:** Tailwind CSS  
-- **Charts:** Recharts *(planned)*  
-- **API:** Finnhub *(planned)*  
-
----
-
-## 📂 Project Structure
-
-```
-src/
-├── components/
-│   ├── Card.jsx        # Reusable UI container
-│   ├── MainPage.jsx    # Dashboard layout
-├── constants/          # Configuration and mock data
-├── App.jsx             # Root component
+```text
+trade-view/
+  src/
+    components/
+      Card.jsx
+      MainPage.jsx
+    constants/
+      configuration.js
+      mock.js
+    App.jsx
 ```
 
----
+## Run Locally
 
-## 🧠 Current Focus
+```bash
+cd trade-view
+npm install
+npm run dev
+```
 
-- Building the core dashboard layout  
-- Structuring reusable components  
-- Preparing for API integration  
+Build for production:
 
----
+```bash
+cd trade-view
+npm run build
+```
 
-## 📌 Future Improvements
+## Current Status
 
-- Live stock data integration  
-- Advanced charting and timeframes  
-- Search and filtering functionality  
-- User-friendly UI/UX enhancements  
+The dashboard UI is implemented and working with mock data. The main remaining product step is live stock search and API-backed quote and historical market data.
 
----
+## Next Improvements
 
-## 🙌 Acknowledgements
+- Search by ticker or company name
+- Live quote and candle integration
+- Expanded charting and timeframe controls
+- Better filtering and portfolio customization
 
-- Finnhub API for stock market data  
-- Inspiration from modern financial dashboards  
+## Author
 
----
-
-## 📅 Status
-
-🚧 **Actively in development**
-
----
-
-## 👤 Author
-
-**Tristan Farhood**  
-Computer Science @ Western University  
-
----
+Tristan Farhood  
+Computer Science @ Western University
