@@ -1,16 +1,40 @@
-# React + Vite
+# TradeView Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TradeView is a responsive stock dashboard built with React, Vite and Tailwind v4. The current build uses structured mock data so the interface is fully usable without wiring a live market API first.
 
-Currently, two official plugins are available:
+## Included
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Multi-panel market dashboard with responsive desktop and mobile layouts
+- Interactive symbol switching for `AAPL`, `MSFT`, `NVDA`, and `AMZN`
+- Range-based SVG price chart with `1D`, `1W`, `1M`, `3M`, and `1Y` views
+- Watchlist, movers, company snapshot, session details, and portfolio allocation panels
+- Clean local data layer ready to swap for Finnhub or another market data provider
 
-## React Compiler
+## Run
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Build for production:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+```
+
+## Structure
+
+```text
+src/
+  components/
+    Card.jsx
+    MainPage.jsx
+  constants/
+    configuration.js
+    mock.js
+```
+
+## Next step for real data
+
+Replace `src/constants/mock.js` with API-backed state and keep the UI contract intact. The current symbol objects already mirror the shape you would typically derive from quote, company profile, and historical candle endpoints.

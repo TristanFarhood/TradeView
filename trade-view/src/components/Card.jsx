@@ -1,10 +1,17 @@
-import react from "react";
-
-const Card = ({ children }) => {
+const Card = ({ title, subtitle, action, className = "", children }) => {
   return (
-    <div className="w-full h-full rounded-md relative p-4 border border-slate-300 bg-slate-200">
+    <section className={`panel ${className}`}>
+      {(title || subtitle || action) && (
+        <header className="panel-header">
+          <div>
+            {title ? <p className="panel-title">{title}</p> : null}
+            {subtitle ? <p className="panel-subtitle">{subtitle}</p> : null}
+          </div>
+          {action ? <div>{action}</div> : null}
+        </header>
+      )}
       {children}
-    </div>
+    </section>
   );
 };
 

@@ -1,89 +1,170 @@
-// finnhub simulation/sample fake API data 
+const intradayLabels = [
+  "9:30",
+  "10:15",
+  "11:00",
+  "11:45",
+  "12:30",
+  "13:15",
+  "14:00",
+  "14:45",
+  "15:30",
+  "16:00",
+];
 
-export const sampleResults = { // export allows usability in other files
-  "count": 4,
-  "result": [
+export const dashboardData = {
+  marketSummary: {
+    date: "June 17, 2026",
+    session: "US markets close in 2h 14m",
+    breadth: "Risk appetite remains constructive as mega-cap tech leads volume.",
+    indices: [
+      { name: "S&P 500", value: "6,412.28", change: 0.84 },
+      { name: "Nasdaq 100", value: "23,118.62", change: 1.12 },
+      { name: "Dow Jones", value: "44,108.17", change: 0.31 },
+    ],
+  },
+  symbols: [
     {
-      "description": "APPLE INC",
-      "displaySymbol": "AAPL",
-      "symbol": "AAPL",
-      "type": "Common Stock"
+      symbol: "AAPL",
+      name: "Apple",
+      exchange: "NASDAQ",
+      price: 214.56,
+      change: 2.31,
+      changeValue: 4.85,
+      volume: "58.2M",
+      avgVolume: "61.4M",
+      marketCap: "$3.28T",
+      peRatio: "31.7",
+      dividendYield: "0.46%",
+      high52w: "$220.19",
+      low52w: "$164.08",
+      sentiment: "Bullish",
+      overview:
+        "Hardware resilience and services expansion keep Apple near the top of the quality-growth basket.",
+      metrics: [
+        { label: "Open", value: "$211.94" },
+        { label: "Day range", value: "$210.72 - $215.12" },
+        { label: "52W range", value: "$164.08 - $220.19" },
+        { label: "Beta", value: "1.18" },
+      ],
+      chart: {
+        "1D": [208, 209.3, 210.8, 210.1, 211.7, 212.4, 213.2, 214.1, 213.8, 214.56],
+        "1W": [201.4, 203.2, 205.6, 204.9, 207.1, 208.4, 209.7, 211.2, 213.5, 214.56],
+        "1M": [192.1, 194.8, 196.3, 198.5, 201.2, 202.8, 205.1, 208.7, 211.6, 214.56],
+        "3M": [178.9, 181.4, 184.2, 187.6, 191.5, 196.8, 201.9, 206.2, 210.7, 214.56],
+        "1Y": [168.2, 171.5, 176.7, 182.4, 188.1, 193.8, 199.4, 204.3, 209.6, 214.56],
+      },
     },
     {
-      "description": "APPLE INC",
-      "displaySymbol": "AAPL.SW",
-      "symbol": "AAPL.SW",
-      "type": "Common Stock"
+      symbol: "MSFT",
+      name: "Microsoft",
+      exchange: "NASDAQ",
+      price: 486.12,
+      change: 1.42,
+      changeValue: 6.81,
+      volume: "21.7M",
+      avgVolume: "24.9M",
+      marketCap: "$3.61T",
+      peRatio: "36.4",
+      dividendYield: "0.61%",
+      high52w: "$489.74",
+      low52w: "$362.11",
+      sentiment: "Strong momentum",
+      overview:
+        "Azure demand and software pricing power continue to support a premium multiple.",
+      metrics: [
+        { label: "Open", value: "$480.08" },
+        { label: "Day range", value: "$478.62 - $487.01" },
+        { label: "52W range", value: "$362.11 - $489.74" },
+        { label: "Beta", value: "0.94" },
+      ],
+      chart: {
+        "1D": [476.2, 478.4, 479.8, 478.7, 481.5, 482.3, 484.2, 485.1, 484.4, 486.12],
+        "1W": [462.4, 466.8, 470.1, 468.6, 472.4, 475.8, 478.9, 482.1, 484.7, 486.12],
+        "1M": [441.2, 445.6, 448.3, 452.7, 458.1, 462.8, 468.4, 474.6, 480.3, 486.12],
+        "3M": [418.8, 423.7, 430.6, 439.4, 448.2, 456.5, 464.7, 472.6, 479.3, 486.12],
+        "1Y": [377.5, 389.1, 402.3, 418.9, 432.5, 446.7, 458.3, 469.9, 478.1, 486.12],
+      },
     },
     {
-      "description": "APPLE INC",
-      "displaySymbol": "APC.BE",
-      "symbol": "APC.BE",
-      "type": "Common Stock"
+      symbol: "NVDA",
+      name: "NVIDIA",
+      exchange: "NASDAQ",
+      price: 152.88,
+      change: -0.94,
+      changeValue: -1.45,
+      volume: "78.3M",
+      avgVolume: "84.1M",
+      marketCap: "$3.76T",
+      peRatio: "47.2",
+      dividendYield: "0.03%",
+      high52w: "$158.41",
+      low52w: "$90.62",
+      sentiment: "Volatile leadership",
+      overview:
+        "AI infrastructure demand stays intact, but positioning leaves the name more sensitive intraday.",
+      metrics: [
+        { label: "Open", value: "$154.44" },
+        { label: "Day range", value: "$151.93 - $155.02" },
+        { label: "52W range", value: "$90.62 - $158.41" },
+        { label: "Beta", value: "1.74" },
+      ],
+      chart: {
+        "1D": [156.3, 155.8, 155.2, 154.9, 154.3, 153.6, 153.4, 152.8, 152.1, 152.88],
+        "1W": [149.7, 151.2, 154.1, 153.5, 155.9, 156.2, 155.4, 154.1, 153.2, 152.88],
+        "1M": [138.8, 141.4, 143.7, 145.1, 147.9, 149.5, 151.6, 153.2, 154.4, 152.88],
+        "3M": [121.6, 126.4, 130.2, 135.5, 139.3, 143.6, 147.9, 150.1, 153.3, 152.88],
+        "1Y": [92.4, 98.7, 107.1, 116.5, 126.2, 134.9, 141.3, 147.2, 151.4, 152.88],
+      },
     },
     {
-      "description": "APPLE INC",
-      "displaySymbol": "APC.DE",
-      "symbol": "APC.DE",
-      "type": "Common Stock"
-    }
-  ]
+      symbol: "AMZN",
+      name: "Amazon",
+      exchange: "NASDAQ",
+      price: 231.64,
+      change: 0.67,
+      changeValue: 1.54,
+      volume: "33.8M",
+      avgVolume: "35.5M",
+      marketCap: "$2.44T",
+      peRatio: "43.8",
+      dividendYield: "N/A",
+      high52w: "$233.90",
+      low52w: "$151.61",
+      sentiment: "Accumulation",
+      overview:
+        "Retail margin gains and cloud stability continue to improve the medium-term setup.",
+      metrics: [
+        { label: "Open", value: "$229.92" },
+        { label: "Day range", value: "$229.10 - $232.02" },
+        { label: "52W range", value: "$151.61 - $233.90" },
+        { label: "Beta", value: "1.28" },
+      ],
+      chart: {
+        "1D": [228.7, 229.1, 229.8, 229.6, 230.2, 230.5, 231.4, 231.1, 231.7, 231.64],
+        "1W": [224.2, 225.7, 227.1, 226.4, 228.3, 229.5, 230.4, 231.1, 231.7, 231.64],
+        "1M": [212.8, 215.1, 217.4, 219.7, 221.1, 223.9, 226.3, 228.5, 230.9, 231.64],
+        "3M": [196.7, 201.2, 205.4, 209.6, 214.1, 218.3, 222.7, 226.4, 229.2, 231.64],
+        "1Y": [154.3, 163.5, 176.8, 188.2, 198.7, 207.3, 216.9, 223.1, 228.4, 231.64],
+      },
+    },
+  ],
+  watchlist: [
+    { symbol: "META", name: "Meta", price: "$712.14", change: 1.23 },
+    { symbol: "TSLA", name: "Tesla", price: "$201.06", change: -2.14 },
+    { symbol: "AMD", name: "AMD", price: "$188.55", change: 2.87 },
+    { symbol: "NFLX", name: "Netflix", price: "$744.21", change: 0.52 },
+  ],
+  movers: [
+    { symbol: "PLTR", direction: "up", change: 6.94, catalyst: "Federal contract expansion" },
+    { symbol: "SNOW", direction: "up", change: 4.28, catalyst: "Analyst upgrade cycle" },
+    { symbol: "COIN", direction: "down", change: -3.12, catalyst: "Crypto risk-off session" },
+    { symbol: "SHOP", direction: "up", change: 2.76, catalyst: "GMV beat expectations" },
+  ],
+  positions: [
+    { symbol: "AAPL", allocation: 32, pnl: 12.4 },
+    { symbol: "MSFT", allocation: 27, pnl: 9.8 },
+    { symbol: "NVDA", allocation: 23, pnl: 18.6 },
+    { symbol: "AMZN", allocation: 18, pnl: 7.1 },
+  ],
+  labels: intradayLabels,
 };
-
-export const sampleCompaniesDetails = { 
-  "country": "US",
-  "currency": "USD",
-  "exchange": "NASDAQ/NMS (GLOBAL MARKET)",
-  "ipo": "1980-12-12",
-  "marketCapitalization": 1415993,
-  "name": "Apple Inc",
-  "phone": "14089961010",
-  "shareOutstanding": 4375.47998046875,
-  "ticker": "AAPL",
-  "weburl": "https://www.apple.com/",
-  "logo": "https://static.finnhub.io/logo/87cb30d8-80df-11ea-8951-00000000092a.png",
-  "finnhubIndustry":"Technology"
-}; 
-
-export const sampleStockQuote = {
-  "c": 261.74,
-  "h": 263.31,
-  "l": 260.68,
-  "o": 261.07,
-  "pc": 259.45,
-  "t": 1582641000 
-}; 
-
-export const sampleHistoricalData = {
-  "c": [
-    217.68,
-    221.03,
-    219.89
-  ],
-  "h": [
-    222.49,
-    221.5,
-    220.94
-  ],
-  "l": [
-    217.19,
-    217.1402,
-    218.83
-  ],
-  "o": [
-    221.03,
-    218.55,
-    220
-  ],
-  "s": "ok",
-  "t": [
-    1569297600,
-    1569384000,
-    1569470400
-  ],
-  "v": [
-    33463820,
-    24018876,
-    20730608
-  ]
-}; 
